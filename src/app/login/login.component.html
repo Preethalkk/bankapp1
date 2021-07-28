@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>{{aim}}</h1>
+    <div class="login-div">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col" style=" background-color: white; border: 2px solid black;;">
+                <h2 style="text-align: center; color: darkslategrey;">Login</h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="uname" (change)="accNumber($event)" [value]="acNumber" placeholder="username"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="pwd" (change)="pswdChange($event)" placeholder="password"
+                        aria-label="password" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                    <p style="color: red;" id="error"></p>
+                </div>
+                <div class="input-group mb-3 login-btn-center">
+                    <button (click)="login()" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
