@@ -39,10 +39,14 @@ this.pswd=event.target.value
   }
 
 
-  login(){
+  login(a:any,p:any){
 
-    var acno= this.acno;
-    var pswd=this.pswd;
+    
+    var acno=a.value;
+    console.log(acno)
+
+    var pswd=p.value;
+    console.log(pswd)
 
     let accDetails=this.users
     if(acno in accDetails){
