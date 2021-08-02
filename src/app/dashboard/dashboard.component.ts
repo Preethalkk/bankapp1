@@ -23,16 +23,17 @@ export class DashboardComponent implements OnInit {
       
       acno:['' ,[Validators.required,Validators.pattern('[0-9]*'),Validators.minLength(4)]],
       pswd:['' ,[Validators.required,Validators.pattern('[a-zA-z0-9]*')]],
-      amount:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]]
+      amount:['',[Validators.required,Validators.pattern('[0-9]*')]]
   })
 
   withdrawForm =this.fb.group({
       
     acno:['' ,[Validators.required,Validators.pattern('[0-9]*'),Validators.minLength(4)]],
     pswd:['' ,[Validators.required,Validators.pattern('[a-zA-z0-9]*')]],
-    amount:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]]
+    amount:['',[Validators.required,Validators.pattern('[0-9]*')]]
 })
 
+user=this.ds.currentUser
 
   constructor(private ds:DataService,private fb:FormBuilder) { }
 
