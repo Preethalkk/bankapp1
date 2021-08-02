@@ -7,22 +7,26 @@
             <div class="col" style=" background-color: white; border: 2px solid black;">
                 <h2 style="text-align: center; color: darkslategrey;">Deposit form</h2>
                 
-                <form (ngSubmit)="deposit()">
-                <div class="input-group mb-3">   
-                    <input type="text" class="form-control" id="acno" name="acno" [(ngModel)]="acno" 
-                        placeholder="Account Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                </div>
+                <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+                    <div class="input-group mb-3">  
+    
+                        <input type="text" class="form-control" id="acno" name="acno" formControlName="acno" 
+                            placeholder="Account Number" aria-label="Recipient's username" aria-describedby="basic-addon2"><br>
+                            
+                        </div>  
+                        <div *ngIf="(this.depositForm.get('acno')?.touched || this.depositForm.get('acno')?.dirty) && this.depositForm.get('acno')?.errors" class="error">Invalid Account Number</div><br>
 
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="pswd" name="pswd" formControlName="pswd" placeholder="password"
+                                aria-label="password" aria-describedby="basic-addon2">
+                        </div>
+                        <div *ngIf="(this.depositForm.get('pswd')?.touched || this.depositForm.get('pswd')?.dirty) && this.depositForm.get('pswd')?.errors" class="error">Invalid Password</div><br>
 
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" id="pswd" name="pswd" [(ngModel)]="pswd" placeholder="password"
-                        aria-label="password" aria-describedby="basic-addon2">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="amount"  name="amount"[(ngModel)]="amount" 
-                        placeholder="Amount" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                </div>
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="uname" name="amount" formControlName="amount" placeholder="Amount"
+                                aria-label="Recipient username" aria-describedby="basic-addon2">
+                        </div>
+                        <div *ngIf="(this.depositForm.get('amount')?.touched || this.depositForm.get('amount')?.dirty) && this.depositForm.get('amount')?.errors" class="error">Invalid Amount</div><br>
 
 
                 <div class="input-group mb-3">
@@ -48,23 +52,26 @@
             <div class="col" style=" background-color: white; border: 2px solid black;">
                 <h2 style="text-align: center; color: darkslategrey;">Withdraw form</h2>
                 
-                <form (ngSubmit)="withdraw()">
-                <div class="input-group mb-3">   
-                    <input type="text" class="form-control" id="acno1" name="acno1" [(ngModel)]="acno1" 
-                        placeholder="Account Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                </div>
+                <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
+                    <div class="input-group mb-3">  
+    
+                        <input type="text" class="form-control" id="acno1" name="acno1" formControlName="acno"
+                            placeholder="Account Number" aria-label="Recipient's username" aria-describedby="basic-addon2"><br>
+                            
+                        </div>  
+                        <div *ngIf="(this.withdrawForm.get('acno')?.touched || this.withdrawForm.get('acno')?.dirty) && this.withdrawForm.get('acno')?.errors" class="error">Invalid Account Number</div><br>
 
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="pswd1" name="pswd1" formControlName="pswd" placeholder="password"
+                                aria-label="password" aria-describedby="basic-addon2">
+                        </div>
+                        <div *ngIf="(this.withdrawForm.get('pswd')?.touched || this.withdrawForm.get('pswd')?.dirty) && this.withdrawForm.get('pswd')?.errors" class="error">Invalid Password</div><br>
 
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" id="pswd1" name="pswd1" [(ngModel)]="pswd1" placeholder="password"
-                        aria-label="password" aria-describedby="basic-addon2">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="amount1"  name="amount1"[(ngModel)]="amount1" 
-                        placeholder="Amount" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                </div>
-
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" id="amount1" name="amount1" formControlName="amount" placeholder="Amount"
+                                aria-label="Recipient username" aria-describedby="basic-addon2">
+                        </div>
+                        <div *ngIf="(this.withdrawForm.get('amount')?.touched || this.withdrawForm.get('amount')?.dirty) && this.withdrawForm.get('amount')?.errors" class="error">Invalid Amount</div><br>
 
                 <div class="input-group mb-3">
                     <p style="color: red;" id="error"></p>
