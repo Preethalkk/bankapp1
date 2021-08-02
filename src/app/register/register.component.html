@@ -1,0 +1,39 @@
+<div class="container">
+
+   
+    <div class="login-div">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col" style=" background-color: white; border: 2px solid black;">
+                <h2 style="text-align: center; color: darkslategrey;">Register</h2>
+                
+                <form (ngSubmit)="register()">
+                <div class="input-group mb-3">   
+                    <input type="text" class="form-control" id="acno" name="acno" [(ngModel)]="acno" 
+                        placeholder="Account Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="uname"  name="uname"[(ngModel)]="uname" 
+                        placeholder="Username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" id="pswd" name="pswd" [(ngModel)]="pswd" placeholder="password"
+                        aria-label="password" aria-describedby="basic-addon2">
+                </div>
+
+                <div class="input-group mb-3">
+                    <p style="color: red;" id="error"></p>
+                </div>
+
+                <div class="input-group mb-3 login-btn-center">
+                    <button type="submit" (click)="register()" class="btn btn-primary">Register</button> 
+               
+                </div>
+            </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
